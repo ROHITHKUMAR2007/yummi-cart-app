@@ -2,95 +2,133 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Yummy Food Delivery Design System
+   A warm, appetizing palette that makes users hungry and happy!
+   All colors in HSL format
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Food Colors */
+    --background: 40 100% 98%;
+    --foreground: 20 30% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 20 30% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 20 30% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Warm Orange - Primary */
+    --primary: 20 95% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 20 95% 48%;
+    --primary-glow: 20 100% 60%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Sunny Yellow - Secondary */
+    --secondary: 45 100% 60%;
+    --secondary-foreground: 30 50% 20%;
+    --secondary-hover: 45 100% 55%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Fresh Green - Healthy/Veg */
+    --healthy: 145 60% 45%;
+    --healthy-foreground: 0 0% 100%;
+    --healthy-light: 145 60% 90%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Cherry Red - Deals/Hot */
+    --hot: 0 80% 55%;
+    --hot-foreground: 0 0% 100%;
+    --hot-light: 0 80% 92%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Creamy backgrounds */
+    --cream: 40 60% 96%;
+    --cream-dark: 35 40% 92%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --muted: 40 30% 94%;
+    --muted-foreground: 30 15% 45%;
 
-    --radius: 0.5rem;
+    --accent: 45 100% 85%;
+    --accent-foreground: 30 50% 20%;
 
-    --sidebar-background: 0 0% 98%;
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --border: 35 30% 88%;
+    --input: 35 30% 88%;
+    --ring: 20 95% 55%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    --radius: 1rem;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    /* Rating Stars */
+    --star: 45 100% 50%;
+    --star-empty: 40 20% 85%;
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(20 30% 20% / 0.08);
+    --shadow-card: 0 8px 30px -4px hsl(20 30% 20% / 0.12);
+    --shadow-elevated: 0 20px 60px -10px hsl(20 30% 20% / 0.2);
+    --shadow-glow: 0 0 40px hsl(20 95% 55% / 0.3);
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar (keeping for compatibility) */
+    --sidebar-background: 40 100% 98%;
+    --sidebar-foreground: 20 30% 15%;
+    --sidebar-primary: 20 95% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 45 100% 85%;
+    --sidebar-accent-foreground: 30 50% 20%;
+    --sidebar-border: 35 30% 88%;
+    --sidebar-ring: 20 95% 55%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 20 20% 8%;
+    --foreground: 40 30% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 20 20% 12%;
+    --card-foreground: 40 30% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 20 20% 12%;
+    --popover-foreground: 40 30% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 20 95% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 20 95% 60%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 45 80% 50%;
+    --secondary-foreground: 30 50% 10%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --healthy: 145 60% 50%;
+    --healthy-light: 145 30% 20%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --hot: 0 80% 55%;
+    --hot-light: 0 40% 20%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --cream: 20 15% 15%;
+    --cream-dark: 20 15% 12%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --muted: 20 15% 18%;
+    --muted-foreground: 30 15% 60%;
+
+    --accent: 45 60% 25%;
+    --accent-foreground: 45 100% 85%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 20 15% 20%;
+    --input: 20 15% 20%;
+    --ring: 20 95% 55%;
+
+    --sidebar-background: 20 20% 10%;
+    --sidebar-foreground: 40 30% 95%;
+    --sidebar-primary: 20 95% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 45 60% 25%;
+    --sidebar-accent-foreground: 45 100% 85%;
+    --sidebar-border: 20 15% 20%;
+    --sidebar-ring: 20 95% 55%;
   }
 }
 
@@ -100,6 +138,205 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-nunito antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-fredoka font-semibold;
+  }
+}
+
+@layer components {
+  /* Food Card Styles */
+  .food-card {
+    @apply bg-card rounded-2xl overflow-hidden transition-all duration-300 ease-out;
+    box-shadow: var(--shadow-card);
+  }
+
+  .food-card:hover {
+    @apply -translate-y-2;
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Badge Styles */
+  .badge-hot {
+    @apply bg-hot text-hot-foreground px-3 py-1 rounded-full text-sm font-semibold;
+  }
+
+  .badge-veg {
+    @apply bg-healthy text-healthy-foreground px-3 py-1 rounded-full text-sm font-semibold;
+  }
+
+  .badge-bestseller {
+    @apply bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-semibold;
+  }
+
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary-hover transition-all duration-200 font-semibold rounded-full px-6 py-3;
+  }
+
+  .btn-primary:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary-hover transition-all duration-200 font-semibold rounded-full px-6 py-3;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200 font-semibold rounded-full px-6 py-3;
+  }
+
+  /* Category Pill */
+  .category-pill {
+    @apply bg-cream hover:bg-accent transition-all duration-200 rounded-full px-4 py-2 font-medium cursor-pointer;
+  }
+
+  .category-pill.active {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  /* Search Input */
+  .search-input {
+    @apply bg-cream border-none rounded-full px-6 py-3 w-full focus:ring-2 focus:ring-primary/30 focus:outline-none transition-all duration-200;
+  }
+
+  /* Gradient Backgrounds */
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  }
+
+  .gradient-warm {
+    background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--primary)) 100%);
+  }
+
+  .gradient-fresh {
+    background: linear-gradient(135deg, hsl(var(--healthy)) 0%, hsl(145 60% 60%) 100%);
+  }
+
+  /* Floating elements */
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Shimmer effect for loading */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--cream)) 0%,
+      hsl(var(--cream-dark)) 50%,
+      hsl(var(--cream)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Price tag */
+  .price-tag {
+    @apply text-primary font-bold text-xl;
+  }
+
+  /* Rating stars */
+  .star-filled {
+    color: hsl(var(--star));
+  }
+
+  .star-empty {
+    color: hsl(var(--star-empty));
+  }
+}
+
+@layer utilities {
+  /* Hover scale effect */
+  .hover-bounce {
+    @apply transition-transform duration-200 ease-out hover:scale-105 active:scale-95;
+  }
+
+  /* Pulse animation for notifications */
+  .pulse-dot {
+    @apply relative;
+  }
+
+  .pulse-dot::after {
+    content: '';
+    @apply absolute -top-1 -right-1 w-3 h-3 bg-hot rounded-full;
+    animation: pulse-ring 1.5s infinite;
+  }
+
+  /* Glassmorphism */
+  .glass {
+    @apply bg-white/80 backdrop-blur-md;
+  }
+
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-md;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
   }
 }
